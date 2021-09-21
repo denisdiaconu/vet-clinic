@@ -17,9 +17,6 @@ UPDATE animals SET species = 'unspecified';
 SELECT species FROM animals;
 ROLLBACK;
 SELECT species FROM animals;
-
-
-
 BEGIN;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE species = NULL;
@@ -47,4 +44,4 @@ SELECT AVG(weight_kg) FROM animals;
 SELECT * FROM animals WHERE neutered = true OR neutered = false GROUP BY neutered;
 
 SELECT neutered, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY neutered;
-SELECT AVG(escape_attempts), neutered FROM animals WHERE date_of_birth > '1990-01-01' AND date_of_birth < '2000-12-01' GROUP BY neutered ;
+SELECT AVG(escape_attempts), species FROM animals WHERE date_of_birth > '1990-01-01' AND date_of_birth < '2000-12-01' GROUP BY species;
