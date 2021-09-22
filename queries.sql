@@ -79,6 +79,6 @@ SELECT animals.name FROM animals
     LEFT JOIN owners ON owners.id = animals.owner_id
     WHERE animals.escape_attempts = 0 AND owners.full_name = 'Dean Winchester';
 
-SELECT owners.full_name, COUNT(animals.owner_id) FROM animals 
+SELECT owners.full_name, COUNT(animals.owner_id) FROM animals
     FULL OUTER JOIN owners
     ON animals.owner_id = owners.id GROUP BY owners.id;
