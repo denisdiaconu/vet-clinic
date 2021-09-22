@@ -25,6 +25,12 @@ CREATE TABLE owners (
 
 CREATE TABLE species (
     id INT NOT NULL AUTO_INCREMENT,
-    name varchar(100),    
+    name varchar(100),
     PRIMARY KEY(id)
 );
+
+ALTER TABLE animals DROP COLUMN species;
+ALTER TABLE animals ADD species_id INT;
+ALTER TABLE animals ADD owner_id INT;
+ALTER TABLE animals ADD FOREIGN KEY (species_id) REFERENCES species(id);
+ALTER TABLE animals ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
