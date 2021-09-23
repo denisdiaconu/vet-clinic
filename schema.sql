@@ -48,8 +48,8 @@ CREATE TABLE vets (
 );
 
 CREATE TABLE specializations (
-    species_id  INT,
-    vets_id     INT,
+    species_id INT,
+    vets_id INT,
     FOREIGN KEY (species_id) REFERENCES species (id),
     FOREIGN KEY (vets_id) REFERENCES vets (id),
     PRIMARY KEY (species_id, vets_id)
